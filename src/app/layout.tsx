@@ -3,6 +3,7 @@ import "@/global.css"
 import { Inter as FontSans } from "next/font/google"
 import { PropsWithChildren } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Navbar } from "@/components/Navbar"
 
 
 export const fontSans = FontSans({
@@ -14,12 +15,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
-      >
+      <body>
         <ThemeProvider
           themes={['danny', 'light', 'dark']}
           attribute="class"
@@ -27,6 +23,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           <main className="flex relative h-full font-sans min-h-screen">
             <div className="flex-grow flex-1 ">
               {children}
