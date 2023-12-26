@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils"
 import "@/global.css"
 import { Inter as FontSans } from "next/font/google"
 import { PropsWithChildren } from "react"
